@@ -1,3 +1,7 @@
-const app = async () => '#BuildforSDG';
+import React from "react";
 
-export default app;
+const App = () => {
+    return <div>Hello</div>;
+}
+
+export default App;
