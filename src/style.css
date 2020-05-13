@@ -1,0 +1,116 @@
+body{
+   
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+} 
+.navpadding li a {
+    color: #fff !important;
+}
+
+.card-img-top{
+    width:100%;
+    height:40vh;
+    object-fit: cover;
+}
+
+.linkcol{
+    border: 1px solid grey;
+    border-radius: 40px;
+}
+
+header.masthead{
+    text-align: center;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+     color: #fff;
+     background: url(./component/Images/nature1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+@media (min-width: 768px) {
+    header.masthead{
+        padding-top: 17rem;
+        padding-bottom: 2.25rem;
+    }
+}
+
+.btn-social {
+    height: 2rem;
+    width: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-twitter{
+    color: #00aced;
+    font-size: 2rem;
+}
+
+#fab{
+    background:#3b5998;
+}
+#insta{
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);
+}
+.fa-facebook-f{
+    color: #fff;
+    font-size: 1.5rem;
+}
+.fa-instagram{
+   font-size: 2rem;
+   color: #fff;
+    border-radius: 20%;
+}
+
+#footer{
+    font-family: "pacifico";
+    margin: 1rem 0;
+  }
+
+  .light-100{
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+    margin-top: .8rem;
+    margin-bottom: 1rem;
+  }
+
+  .padding{
+    color: #d5d5d5;
+    padding-top: 3rem;
+    margin-top: 4rem;
+  }
+
+  .team-row{
+      display:flex;
+      justify-content: space-around;
+  }
+  
+  #about {
+      color: #0c7e32;
+  }
+
+  #btn-link{
+      background: #28a745!important;
+    border: 1px solid grey;
+    border-radius: 40px;
+    cursor: pointer;
+    padding: 0.5rem 1.3rem;
+    text-decoration: none;
+    outline: none;
+    transition: 0.5s;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+
+  #btn-link:hover{
+      background:#1e7e34 !important;
+  }
