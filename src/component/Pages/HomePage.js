@@ -4,7 +4,7 @@ import img1 from '../Images/farmer.jpg';
 import SectionA from '../Common/SectionA';
 import Products from '../Common/Products';
 import Statistics from '../Common/Statistcs';
-import Footer from '../Common/Footer'
+import Footer from '../Common/Footer';
 
 
 export class HomePage extends Component {

@@ -5,7 +5,7 @@ const Header = (props) => {
         return (
             <div>
                 <header className="masthead" style = {{backgroundImage: `url(${props.image})`}}>
-                  <div className="">
+                  <div className="container">
                      <div className = 'row'>
                         <div className ='col-6'>
                         <div className="masthead-subheading">{props.title}</div>
