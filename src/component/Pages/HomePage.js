@@ -16,7 +16,7 @@ export class HomePage extends Component {
                 title = 'Feed the World'
                 subtitle  = {
                             <div>
-                              <p>Join the platform and help achieve our<br />
+                              <p id ='subheading'>Join the platform and help achieve our<br />
                                goal of Global farming practice</p>
                             </div>}
                 image ={img1}

@@ -12,7 +12,12 @@ export class About extends Component {
                 <Header 
                    image = {img} 
                    showButton = {false}
-                   subtitle = 'How Teams Help to empower farmer'
+                   subtitle = {
+                       <div>
+                            <p className ='about-page'>How Teams <br />
+                            Help to empower farmer</p>
+                       </div>
+                     }
                    color = {true}
                 />
                 <About1 />

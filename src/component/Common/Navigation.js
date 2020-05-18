@@ -4,9 +4,9 @@ import {NavLink} from 'react-router-dom';
 const Navigation = () => {
     return(
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <NavLink className="navbar-brand" to="/">EmpowerFarmers</NavLink>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <NavLink className="navbar-brand" to="/"><span id  ='nav-logo'>Empower</span>Farmers</NavLink>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
         

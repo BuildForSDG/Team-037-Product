@@ -21,8 +21,8 @@ const teams = [
 
 const Team = () => {
     return (
-        <div className ='container-fluid '>
-            <div className ='row justify-content-center text-center'>
+        <div className ='container-fluid' style = {{backgroundColor: '#F2F2F2'}}>
+            <div className ='row py-5 justify-content-center text-center'>
                     {teams.map((team, index) => {
                         return  <TeamInfo {...team} key = {index} />
                     })}

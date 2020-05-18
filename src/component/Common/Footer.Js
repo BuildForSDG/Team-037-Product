@@ -19,10 +19,10 @@ const Footer = () => {
                 <p>Donate</p>
                 <p>Fund a Farmer</p>
             </div>
-            <div className = 'col-md-4 mb-3 text-justify pl-md-5'>
-                <h5 className>Join our community</h5>
-                <h5 className> to help empower</h5>
-                <h5 className ='mb-5'> farmer</h5>
+            <div className = 'col-md-4 mb-3 text-justify pl-md-5' id='footer_div'>
+                <h5>Join our community</h5>
+                <h5> to help empower</h5>
+                <h5 className ='mb-md-5 mb-3'> farmer</h5>
                 <a href ='#' className ='btn btn-success px-4' style = {{borderRadius: '2.5em'}} >Get Started</a>
             </div>
             <div className ='col-lg-12'>
