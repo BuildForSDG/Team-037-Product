@@ -166,6 +166,14 @@ header.masthead{
     transition-delay: 0s;
   }
 
+  .btn-product{
+    border-radius: 40px;
+  }
+
+  .products-col{
+    color: #219653;
+  }
+
   #btn-link:hover{
       background:#1e7e34 !important;
   }
@@ -195,8 +203,19 @@ header.masthead{
 
 .img-style{
     width:100% !important;
-    height:20vh;
+    height:12vh;
     margin: auto !important;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px){
+.section .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 575.98px) {
