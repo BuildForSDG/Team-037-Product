@@ -22,7 +22,7 @@ const Navigation = () => {
               <ul className ='nav navbar-nav navbar-right navpadding '>
                     <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Create An Account</NavLink></li> 
                     <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Sign Up</NavLink></li> 
-                    <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Login</NavLink></li> 
+                    <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/login">Login</NavLink></li> 
                 </ul>
             </div>
         </nav>

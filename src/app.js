@@ -4,6 +4,7 @@ import PageWrapper from './component/PageWrapper';
 import HomePage from './component/Pages/HomePage';
 import About from './component/Pages/About';
 import './style.css';
+import Login from './component/SignIn/Login';
 
 const App = () => {
     
@@ -20,6 +21,11 @@ const App = () => {
             <Route 
                 path ='/about'
                 component = {About}
+            />
+
+            <Route
+                path = '/login'
+                component = {Login}
             />
            </PageWrapper>
        </Router>
