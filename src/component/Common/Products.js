@@ -36,13 +36,13 @@ import img4 from '../Images/Products/fish.jpg';
 export class Products extends Component {
     render() {
         return (
-            <div className ='container text-center my-4' style = {{backgroundColor: '#F2F2F2'}}>
+            <div className ='container text-center'>
                 <div className ='row'>
-                    <div className ='col-lg-12 pt-3 text-success'>
+                    <div className ='col-lg-12 text-success'>
                         <h2>Products</h2>
                     </div>
                 </div>
-                <div className ='row reduced-width mb-4 mt-2'>
+                <div className ='row mb-4 mt-3'>
                     {products.map((product, index) => {
                         return <ProductItem {...product} key = {index} />
                     })}
