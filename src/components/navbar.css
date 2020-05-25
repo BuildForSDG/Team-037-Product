@@ -1,0 +1,33 @@
+.navbarDiv {
+    display: flex;
+    justify-content: space-between;
+    background: #F2F2F2;
+}
+
+.logoDiv {
+    display: flex;
+
+} 
+
+.logoText {
+    color: green;
+    font-style: italic;
+}
+
+.textName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tabName {
+    margin-right: 130%;
+}
+.buttonName {
+background-color: green;
+border-radius: 8px;
+width: 9%;
+height: 37px;
+border: none;
+margin-top: 1%;
+color: white;
+}

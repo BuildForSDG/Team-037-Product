@@ -1,0 +1,55 @@
+.sidebarDiv {
+    background-color: #3b7f58;
+    width: 250px;
+    height: 477px;
+    margin-left: 0px;
+    margin-top: 176px;
+}
+.tabDiv {
+    width: 250px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+.tabDiv1{
+    width: 250px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv2{
+    width: 250px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv3{
+    width: 250px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv4{
+    width: 250px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+.tabText {
+    padding-top: 5%;
+    font-family: "Droid Serif", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    /* line-height: 62.62%; */
+    text-align: center;
+    color: #f2f2f2;
+}
