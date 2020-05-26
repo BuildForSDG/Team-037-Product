@@ -2,6 +2,20 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: 0.75rem;
   }
+
+  .wrapper{
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center
+  }
+/* 
+  #main-content{
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,.4);
+    margin: 5em auto;
+    display: flex;
+  } */
   
   .login,
   .image {
@@ -9,13 +23,14 @@
   }
   
   .bg-image {
-    background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
     background-size: cover;
     background-position: center;
   }
   
   .login-heading {
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 1.5rem;
+
   }
   
   .btn-login {
@@ -23,6 +38,8 @@
     letter-spacing: 0.05rem;
     padding: 0.75rem 1rem;
     border-radius: 2rem;
+     text-transform: uppercase;
+      font-weight: 500;
   }
   
   .form-label-group {
@@ -109,5 +126,12 @@
     .form-label-group input:-ms-input-placeholder {
       color: #777;
     }
+  }
+
+  .input-error{
+    color: rgb(235, 54, 54);
+    font-size: 14px;
+    margin-bottom: 20px;
+    padd
   }
   
