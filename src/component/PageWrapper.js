@@ -1,38 +1,14 @@
 import React from 'react';
 import Navigation from '../component/Common/Navigation';
-import {NavLink} from 'react-router-dom';
 
  const PageWrapper = (props) => {
     return (
      <div>
-      <Navigation />
-        <div>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-             <NavLink className="navbar-brand" to="/">EmpowerFarmers</NavLink>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-            
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                        <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
-                        </li>
-                        <li className="nav-item">
-                        <NavLink className="nav-link" to="/">About Us</NavLink>
-                        </li>
-                    </ul>
-                    <ul className ='nav navbar-nav navbar-right navpadding '>
-                        <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Create An Account</NavLink></li> 
-                        <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Sign Up</NavLink></li> 
-                        <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-5' to="/">Login</NavLink></li> 
-                    </ul>
-                </div>
-            </nav>
-            {props.children}
+         <Navigation />
+         {props.children}
      </div>
-   </div> 
- )  
-}
+    )  
+ }
+
 
 export default PageWrapper;

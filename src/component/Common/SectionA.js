@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import SectionInfo from './SectionInfo';
-import img1 from '../Images/farm_girl.png';
+import img1 from '../Images/dark_analytics.png';
 import img2 from '../Images/make_it_rain.png';
 import img3 from '../Images/agreement.png';
 
 const farmInfos = [
     {
-        title: 'Empowering Farmers',
+        title: <div><h6>Empowering</h6><h6> Farmers</h6></div>,
         image: img1,
     },
     {
-        title: 'Promising returns after Harvests',
+        title: <div><h6>Promising returns</h6><h6> after Harvests</h6></div> ,
         image: img2,
     },
     {
-        title: 'Strenghtening Food Security',
+        title: <div><h6>Strenghtening </h6><h6>Food Security</h6></div>,
         image: img3,
     }
 ];
@@ -23,8 +23,8 @@ const farmInfos = [
     
     render() {
         return (
-            <div className="container py-5">
-            <div className ='row no-gutters'>
+            <div className="container-fluid py-5 section" style ={{backgroundColor: '#E0E0E0'}}>
+            <div className ='row d-flex justify-content-around text-center no-gutters'>
                 {farmInfos.map((farmInfo, i) => {
                  return  <SectionInfo {...farmInfo} key ={i}/>
                 })}  

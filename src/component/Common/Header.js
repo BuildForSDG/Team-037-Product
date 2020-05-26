@@ -1,20 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-class Header extends Component {
-    render() {
+const Header = (props) => {
         return (
             <div>
-                <header className="masthead" style = {{backgroundImage: `url(${this.props.image})`}}>
+                <header className="masthead" style = {{backgroundImage: `url(${props.image})`}}>
                   <div className="container">
-                     <div className="masthead-subheading">{this.props.title}</div>
-                     <div className="masthead-heading text-uppercase">{this.props.subtitle}</div>
-                     <NavLink className="btn btn-primary btn-xl text-uppercase" to = {this.props.link}> {this.props.buttonText}</NavLink>
+                     <div className = 'row'>
+                        <div className ='col-md-6'>
+                        <div className="masthead-subheading">{props.title}</div>
+                            {props.color ? <div className="masthead-heading text-uppercase">{props.subtitle}</div> :
+                            <div className="masthead-heading text-uppercase">{props.subtitle}</div>}
+                            {props.showButton ?
+                            <NavLink className="btn btn-success btn-xl text-uppercase" id ='btn-link' to = {props.link}> {props.buttonText}</NavLink> : null
+                            }
+                        </div>
+                     </div>
                  </div>
                </header>
            </div> 
         )
-    }
-}
+   }
 
 export default Header;
