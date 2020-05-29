@@ -9,7 +9,8 @@ const Login = () => {
     const formik = useFormik({
       initialValues: {
         email: '',
-        password: ''
+        password: '',
+        customCheck1: false,
       },
       validationSchema: Yup.object({
         email:  Yup.string()
@@ -17,7 +18,9 @@ const Login = () => {
                 .required('Email is required'),
         password: Yup.string()
                   .required('Password is required')
-                  .min(3,'password must be minimum of 3 characters')
+                  .min(6,'password must be minimum of 6 characters'),
+        customCheck1: Yup.boolean()
+                         .oneOf([true], ''),
      } 
    ),
    onSubmit: async (values, {resetForm, setSubmitting}) => {
@@ -74,6 +77,7 @@ const Login = () => {
                                         type="checkbox" 
                                         className="custom-control-input" 
                                         id="customCheck1"
+                                        {...formik.getFieldProps('customCheck1')}
                                  />
                                     <label className="custom-control-label" htmlFor="customCheck1">Remember password</label>
                                 </div>
