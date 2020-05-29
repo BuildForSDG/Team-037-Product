@@ -3,10 +3,15 @@ import {NavLink} from 'react-router-dom';
 import  './Signup.css';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
+import img1 from './signup.svg';
 
 
 
 const SignUp = () =>{
+
+      const phoneRegex = RegExp(
+        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+);
 
         const formik = useFormik({
             initialValues: {
@@ -29,9 +34,9 @@ const SignUp = () =>{
                              .email('Please provide a valid email address')
                              .required('Email Required'),
                 phoneNumber: Yup.string()
-                                .min(9, 'Phone Number is too short')
-                                .max(15, 'Phone Number too long')
-                                .required('phone number is required'),    
+                                .required('phone number is required')
+                                .max(15, 'phone number is too long.')
+                                .matches(phoneRegex, "Invalid phone"),    
                 password: Yup.string()
                              .required('password is required')
                              .min(6, 'password must be minimum of 6 characters')
@@ -52,9 +57,9 @@ const SignUp = () =>{
 
         return (
             <div className="container wrapper">
-                <div className="row py-5 mt-4 align-items-center">
+                <div className="row pt-5  mt-5 align-items-center">
                  <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" className="img-fluid mb-3 d-none d-md-block" />
+                        <img src={img1} alt="" className="img-fluid mb-3 d-none d-md-block" />
                         <h2 className ='text-center'>Create an Account</h2>
                         <p className=" text-center font-italic text-muted mb-0">Register your information so that you can have access</p>
                    </div>
