@@ -41,6 +41,7 @@
      text-transform: uppercase;
       font-weight: 500;
   }
+ 
   
   .form-label-group {
     position: relative;
@@ -49,7 +50,7 @@
   
   .form-label-group>input,
   .form-label-group>label {
-    padding: var(--input-padding-y) var(--input-padding-x);
+    padding: var(--input-padding-y) var(--input-padding-x) ;
     height: auto;
     border-radius: 2rem;
   }

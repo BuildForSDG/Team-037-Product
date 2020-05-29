@@ -3,7 +3,6 @@ import './login.css';
 import login_img from './login_img.png';
 import *  as Yup from 'yup';
 import {useFormik} from 'formik';
-import { async } from 'q';
 
 const Login = () => {
 
@@ -83,6 +82,7 @@ const Login = () => {
                                 >Login</button>
                                 <div className="text-center">
                                     <a className="small" href="#">Forgot password?</a>
+                                    
                                 </div>
                             </form>
                         </div>
