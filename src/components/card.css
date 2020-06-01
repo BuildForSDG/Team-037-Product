@@ -10,9 +10,10 @@ justify-content: space-between;
 }
 .card{
 width: 60%;
-margin: 2%;
+margin: 5%;
 background: ghostwhite;
 padding: 0 0 2%;
+margin-right: 2%;
 }
 
 .returnDiv2{
