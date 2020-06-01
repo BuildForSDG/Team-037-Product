@@ -8,7 +8,7 @@ import '../sidebar.css';
 
 const Sidebar = () => {
     return (
-    <div className='sidebarDiv'>
+    <div className='sidebarDiv' >
         <DashB />
         <EditP />
         <Sponsorshop />

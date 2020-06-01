@@ -1,0 +1,48 @@
+.imgDiv {
+    
+    width: 100%;
+    height: 130px;
+}
+
+.con{
+    display: flex;
+justify-content: space-between;
+}
+.card{
+width: 60%;
+margin: 2%;
+background: ghostwhite;
+padding: 0 0 2%;
+}
+
+.returnDiv2{
+    margin-left: 0%;
+    padding-left: 1%;
+}
+
+.durationDiv{
+    margin-left: 0%;
+    padding-left: 1%;
+}
+
+.logoDiv1{
+    display: flex;
+}
+
+.logoText1{
+    color: green;
+    font-style: italic;
+}
+
+.buttonName2{
+    background-color: #6FCF97;;
+    border-radius: 9px;
+    width: 74%;
+    height: 46px;
+    color: white;
+    margin-left: 9%;
+    font-family: "Droid Serif", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 162%;
+}

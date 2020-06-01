@@ -1,19 +1,21 @@
 .sidebarDiv {
     background-color: #3b7f58;
-    width: 250px;
+    width: 226px;
     height: 477px;
     margin-left: 0px;
-    margin-top: 176px;
+    margin-top: -27px;
+    padding-top: 1px;
+    margin-right: 3%;
 }
 .tabDiv {
-    width: 250px;
+    width: 226px;
     height: 60px;
     left: 0px;
     top: 40px;
     background: #6FCF97;
 }
 .tabDiv1{
-    width: 250px;
+    width: 226px;
     height: 60px;
     left: 0px;
     top: 40px;
@@ -21,7 +23,7 @@
 }
 
 .tabDiv2{
-    width: 250px;
+    width: 226px;
     height: 60px;
     left: 0px;
     top: 40px;
@@ -29,7 +31,7 @@
 }
 
 .tabDiv3{
-    width: 250px;
+    width: 226px;
     height: 60px;
     left: 0px;
     top: 40px;
@@ -37,11 +39,11 @@
 }
 
 .tabDiv4{
-    width: 250px;
+    width: 226px;
     height: 60px;
     left: 0px;
     top: 40px;
-    background: #6FCF97;
+    background:  green;
 }
 .tabText {
     padding-top: 5%;
