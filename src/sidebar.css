@@ -4,7 +4,7 @@
     height: 477px;
     margin-left: 0px;
     margin-top: -27px;
-    padding-top: 1px;
+    padding-top: 16px;
     margin-right: 3%;
 }
 .tabDiv {
@@ -45,6 +45,19 @@
     top: 40px;
     background:  green;
 }
+
+ .rec22Div{
+     display: flex;
+     width: 14%;
+     height: 8%;
+ }
+
+ .dashDiv1{
+     display: flex;
+     justify-content: space-between;
+ }
+
+
 .tabText {
     padding-top: 5%;
     font-family: "Droid Serif", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -54,4 +67,5 @@
     /* line-height: 62.62%; */
     text-align: center;
     color: #f2f2f2;
+    
 }
