@@ -1,7 +1,8 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, withRouter} from 'react-router-dom';
 
 const Navigation = () => {
+    
     return(
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -29,4 +30,4 @@ const Navigation = () => {
     )
 }
 
-export default Navigation;
+export default withRouter (Navigation);

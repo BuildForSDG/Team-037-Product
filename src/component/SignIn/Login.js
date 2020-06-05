@@ -4,7 +4,10 @@ import login_img from './login_img.png';
 import *  as Yup from 'yup';
 import {useFormik} from 'formik';
 
-const Login = () => {
+const Login = (props) => {
+console.log(props);
+
+const {history} = props;
 
     const formik = useFormik({
       initialValues: {
@@ -27,6 +30,7 @@ const Login = () => {
     await setTimeout(() => {
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
+        history.push('/dashboard');
         resetForm();
     }, 400);
   }
