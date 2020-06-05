@@ -1,0 +1,71 @@
+.sidebarDiv {
+    background-color: #3b7f58;
+    width: 226px;
+    height: 479px;
+    margin-left: 0px;
+    margin-top: -27px;
+    padding-top: 16px;
+    margin-right: 3%;
+}
+.tabDiv {
+    width: 226px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+.tabDiv1{
+    width: 226px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv2{
+    width: 226px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv3{
+    width: 226px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background: #6FCF97;
+}
+
+.tabDiv4{
+    width: 226px;
+    height: 60px;
+    left: 0px;
+    top: 40px;
+    background:  green;
+}
+
+ .rec22Div{
+     display: flex;
+     width: 14%;
+     height: 8%;
+ }
+
+ .dashDiv1{
+     display: flex;
+     justify-content: space-between;
+ }
+
+
+.tabText {
+    padding-top: 5%;
+    font-family: "Droid Serif", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    /* line-height: 62.62%; */
+    text-align: center;
+    color: #f2f2f2;
+    
+}

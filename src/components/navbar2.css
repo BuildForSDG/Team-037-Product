@@ -1,0 +1,16 @@
+.narBar2cutDiv {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 19%;
+}
+
+.returnDiv {
+    background: #F2F2F2;
+    margin-left: -23%;
+}
+
+.cycleDiv {
+    background-color: #F2F2F2;
+    margin-left: 12%;
+}
