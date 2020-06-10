@@ -4,7 +4,7 @@ import  './Signup.css';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import img1 from './signup.svg';
-
+import Navigation from '../Common/Navigation';
 
 
 const SignUp = () =>{
@@ -56,6 +56,8 @@ const SignUp = () =>{
         });
 
         return (
+          <div>
+            <Navigation />
             <div className="container wrapper">
                 <div className="row pt-5  mt-5 align-items-center">
                  <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
@@ -179,14 +181,15 @@ const SignUp = () =>{
                             <button className="btn btn-google btn-block text-uppercase mb-3" type="submit"><i className="fab fa-google mr-2"></i> Sign up with Google</button>
                         </div>
                     </div>
-                    <div className="text-center w-100">
-                        <p className="text-muted font-weight-bold">Already Registered? <NavLink to ='/login' className="text-primary ml-2">Login</NavLink>
-                        </p>
+                    <div className="text-center w-100"> 
+                      <p className="text-muted font-weight-bold">Already Registered? <NavLink to ='/login' className="text-primary ml-2">Login</NavLink>
+                      </p>
                   </div>
                 </form>
               </div>
                  </div>
              </div>
+          </div>
           </div>
      )
 }

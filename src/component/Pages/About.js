@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Common/Header';
+import Navigation from '../Common/Navigation';
 import img from '../Images/About/about_home.jpg';
 import About1 from '../About/About1';
 import Team from '../About/Team';
@@ -9,6 +10,7 @@ export class About extends Component {
     render() {
         return (
             <div>
+                <Navigation />
                 <Header 
                    image = {img} 
                    showButton = {false}

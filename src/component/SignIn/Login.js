@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './login.css';
 import login_img from './login_img.png';
 import *  as Yup from 'yup';
+import Navigation from '../Common/Navigation';
 import {useFormik} from 'formik';
 
 const Login = () => {
@@ -33,7 +34,9 @@ const Login = () => {
 });
 
     return (
-         <div className="container wrapper">
+        <div>
+          <Navigation />
+          <div className="container wrapper">
             <div className="row no-gutter wrapper">
               <div className="d-none d-md-flex col-md-6 bg-image">
                     <img src ={login_img} alt =''  className ='img-fluid'/>
@@ -84,9 +87,16 @@ const Login = () => {
                                 <button className="btn btn-success btn-block btn-login mb-2" type="submit"
                                 onClick = {() => resetForm(formik.initialValues)}
                                 >Login</button>
+                                <div className="border-bottom w-100 ml-5">
+                                  <span className="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                                </div>
+                                <div className ="row justify-content-center">
+                                  <div className ='col-lg-8'>
+                                    <button className="btn btn-google btn-block text-uppercase mb-3" type="submit"><i className="fab fa-google mr-2"></i> Login up with Google</button>
+                                  </div>
+                                </div>
                                 <div className="text-center">
-                                    <a className="small" href="#">Forgot password?</a>
-                                    
+                                  <a className="small" href="#">Forgot password?</a>                                 
                                 </div>
                             </form>
                         </div>
@@ -96,6 +106,7 @@ const Login = () => {
               </div>
             </div>
          </div>
+        </div>
     )
 }
 

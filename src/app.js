@@ -1,6 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import PageWrapper from './component/PageWrapper';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import HomePage from './component/Pages/HomePage';
 import About from './component/Pages/About';
 import SignIn from './component/SignIn/Login'
@@ -12,26 +11,25 @@ const App = () => {
     return (
        
         <Router>
-          <PageWrapper>
-              <Route 
-                path = '/' 
-                exact
-                component = {HomePage}
-             />
-
-            <Route 
-                path ='/about'
-                component = {About}
-            />
-            <Route 
-                path ='/login'
-                component = {SignIn}
-            />
-            <Route 
-                path ='/signup'
-                component = {SignUp}
-            />
-           </PageWrapper>
+            <Switch>
+                <Route 
+                    path = '/' 
+                    exact
+                    component = {HomePage}
+                />
+                <Route 
+                    path ='/about'
+                    component = {About}
+                />
+                <Route 
+                    path ='/login'
+                    component = {SignIn}
+                />
+                <Route
+                    path ='/signup'
+                    component = {SignUp}
+                />
+            </Switch>
        </Router>
     )
 }
