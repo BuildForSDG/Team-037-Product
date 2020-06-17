@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import NavbarSponsor from './Navbar/navbar'
 import SideBarSponsor  from './sideBarSponsor/sideBarSponsor';
 import Cards from './card/card';
-import './SponsorHomePage.css';
+import './sponsorHomePage.css';
 
 const SponsorHomePage = () => {
     const history = useHistory();
