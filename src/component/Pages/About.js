@@ -4,7 +4,7 @@ import Navigation from '../Common/Navigation';
 import img from '../Images/About/about_home.jpg';
 import About1 from '../About/About1';
 import Team from '../About/Team';
-import Footer from '../Common/Footer';
+import Footer from '../Common/Footer.Js';
 
 export class About extends Component {
     render() {
