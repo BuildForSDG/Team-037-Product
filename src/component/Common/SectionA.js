@@ -23,13 +23,15 @@ const farmInfos = [
     
     render() {
         return (
-            <div className="container-fluid py-5 section" style ={{backgroundColor: '#E0E0E0'}}>
-            <div className ='row d-flex justify-content-around text-center no-gutters'>
-                {farmInfos.map((farmInfo, i) => {
-                 return  <SectionInfo {...farmInfo} key ={i}/>
-                })}  
-            </div>
-            </div>
+           <div>
+               <div className="container-fluid py-5 section" style ={{backgroundColor: '#E0E0E0'}}>
+                    <div className ='row d-flex justify-content-around text-center no-gutters'>
+                        {farmInfos.map((farmInfo, i) => {
+                        return  <SectionInfo {...farmInfo} key ={i}/>
+                    })}  
+                    </div>
+                </div>
+           </div>
         )
     }
 }

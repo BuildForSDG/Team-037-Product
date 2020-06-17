@@ -60,7 +60,7 @@
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
+    width: 250px;
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
@@ -69,6 +69,16 @@
     border-radius: .25rem;
     transition: all .1s ease-in-out;
   }
+  .form-label-group select{
+    border-radius: 20px;
+  }
+  .error{
+    color: #d92027 !important;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
 
   @media  (max-width : 768px){
     .form-label-group>label{

@@ -6,6 +6,7 @@ import Products from '../Common/Products';
 import Statistics from '../Common/Statistcs';
 import Footer from '../Common/Footer';
 import Navigation from '../Common/Navigation';
+import { Link } from 'react-router-dom';
 
 
 export class HomePage extends Component {

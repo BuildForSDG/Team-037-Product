@@ -7,7 +7,7 @@ const Header = (props) => {
                 <header className="masthead" style = {{backgroundImage: `url(${props.image})`}}>
                   <div className="container">
                      <div className = 'row'>
-                        <div className ='col-md-6'>
+                        <div className ='col-md-12'>
                         <div className="masthead-subheading">{props.title}</div>
                             {props.color ? <div className="masthead-heading text-uppercase">{props.subtitle}</div> :
                             <div className="masthead-heading text-uppercase">{props.subtitle}</div>}
