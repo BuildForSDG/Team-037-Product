@@ -5,7 +5,7 @@ import About from './component/Pages/About';
 import SignIn from './component/SignIn/Login'
 import SignUp from './component/SignUp/SignUp';
 import './style.css';
-import SponsorHomePage from './component/sponsorPages/sponsorHomePage';
+import SponsorHomePage from './component/sponsorPages/SponsorHomePage';
 import SponsorEditProfile from './component/sponsorPages/EditProfile/SponsorEditProfileHome';
 import confirmationPage from './component/confirmationPage/confirmation';
 import VerifyStatus from './component/confirmationPage/VerifyStatus';
