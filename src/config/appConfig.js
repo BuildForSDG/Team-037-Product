@@ -1,4 +1,4 @@
 export default {
-  FRONTEND_PATH: 'http://localhost:1234',
-  BACKEND_PATH: 'http://localhost:8000/api/v1'
+  FRONTEND_PATH: 'https://sdg-empower-farmer-frontend.herokuapp.com/',
+  BACKEND_PATH: 'https://sdg-empower-farmer.herokuapp.com/'
 };
