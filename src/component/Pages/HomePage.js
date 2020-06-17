@@ -4,7 +4,7 @@ import img1 from '../Images/farmer.jpg';
 import SectionA from '../Common/SectionA';
 import Products from '../Common/Products';
 import Statistics from '../Common/Statistcs';
-import Footer from '../Common/Footer.Js';
+import Footer from '../Common/Footer';
 import Navigation from '../Common/Navigation';
 import { Link } from 'react-router-dom';
 
