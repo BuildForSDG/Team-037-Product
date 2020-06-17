@@ -5,6 +5,10 @@ import About from './component/Pages/About';
 import SignIn from './component/SignIn/Login'
 import SignUp from './component/SignUp/SignUp';
 import './style.css';
+import SponsorHomePage from './component/sponsorPages/sponsorHomePage';
+import SponsorEditProfile from './component/sponsorPages/EditProfile/SponsorEditProfileHome';
+import confirmationPage from './component/confirmationPage/confirmation';
+import VerifyStatus from './component/confirmationPage/VerifyStatus';
 
 const App = () => {
     
@@ -28,6 +32,23 @@ const App = () => {
                 <Route
                     path ='/signup'
                     component = {SignUp}
+                />
+                <Route
+                    path ='/sponsorDashboard'
+                    component = {SponsorHomePage}
+                />
+                <Route
+                    path ='/sponsorEditProfile'
+                    component = {SponsorEditProfile}
+                />
+                <Route
+                    path ='/confirmationPage'
+                    exact
+                    component = { confirmationPage }
+                />
+                 <Route
+                    path ='/verifyStatus'
+                    component = { VerifyStatus }
                 />
             </Switch>
        </Router>

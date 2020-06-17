@@ -1,16 +1,19 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import {NavLink, useHistory} from 'react-router-dom';
 import  './Signup.css';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import img1 from './signup.svg';
 import Navigation from '../Common/Navigation';
+import createUser from '../../api/auth';
 
 
 const SignUp = () =>{
-
-      const phoneRegex = RegExp(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+  const [error, setError] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
+  const history = useHistory();
+  const phoneRegex = RegExp(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 );
 
         const formik = useFormik({
@@ -18,9 +21,10 @@ const SignUp = () =>{
                 firstName: '',
                 lastName: '',
                 email: '',
-                phoneNumber: '',
+                phone: '',
                 password: '', 
                 ConfirmPassword: '',
+                confirmationType: ''
             },
 
             validationSchema: Yup.object({
@@ -33,7 +37,7 @@ const SignUp = () =>{
                 email:    Yup.string()
                              .email('Please provide a valid email address')
                              .required('Email Required'),
-                phoneNumber: Yup.string()
+                phone: Yup.string()
                                 .required('phone number is required')
                                 .max(15, 'phone number is too long.')
                                 .matches(phoneRegex, "Invalid phone"),    
@@ -44,14 +48,22 @@ const SignUp = () =>{
 
                 ConfirmPassword: Yup.string()
                                     .oneOf([Yup.ref('password'), null], 'Passwords must match')
-                                    .required('confirm the password')
+                                    .required('confirm the password'),
+                confirmationType: Yup.string()
+                                    .required('Kindly select a confirmation type'),                    
             }),
-            onSubmit: async (values, {setSubmitting, resetForm}) => {
-                    await setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                        resetForm();
-                    }, 500);
+            onSubmit: async (values, {setSubmitting}) => {        
+                const newUser = await createUser(values);
+                const { status, message, user } = newUser;
+                if(status == 201){
+                  localStorage.setItem('EmpowerFarmerUser', JSON.stringify(user));
+                  return history.push('/confirmationPage');
+                }
+                await setTimeout(() => {
+                    setError(true);
+                    setAlertMessage(message);
+                    setSubmitting(false);
+                }, 500);
             }
         });
 
@@ -70,6 +82,7 @@ const SignUp = () =>{
                 <div className="card-body">
                 <form className="form-signin" onSubmit = {formik.handleSubmit}>
                     <div className ="form-row">
+                        { error ? <div className="error">{alertMessage} </div> : '' }
                         <div className = 'col-md-6'>
                             <div className="form-label-group">
                             <input
@@ -119,15 +132,15 @@ const SignUp = () =>{
                   <div className="form-label-group">
                     <input 
                         type="tel" 
-                        id="phoneNumber" 
+                        id="phone" 
                         className="form-control" 
                         placeholder="Phone Number"
-                        {...formik.getFieldProps('phoneNumber')}
+                        {...formik.getFieldProps('phone')}
                     />
-                    {formik.touched.phoneNumber && formik.errors.phoneNumber ? 
-                        (<div className ='input-error mt-1 pl-3'>{formik.errors.phoneNumber}</div>) : null
+                    {formik.touched.phone && formik.errors.phone ? 
+                        (<div className ='input-error mt-1 pl-3'>{formik.errors.phone}</div>) : null
                       }
-                    <label htmlFor="phoneNumber">Phone Number</label>
+                    <label htmlFor="phone">Phone Number</label>
                   </div>
                   
                   <div className ="form-row">
@@ -162,11 +175,29 @@ const SignUp = () =>{
                      </div>
                    </div>
                   </div>
+                    <div className="form-row">
+                    <div  className ="col-md-12">
+                       <div className="form-label-group">
+                         <select
+                          id="confirmationType"
+                          className="form-control"
+                          {...formik.getFieldProps('confirmationType')}
+                         >
+                            <option>Select a Confirmation Type</option>
+                            <option value="EMAIL">Email</option>
+                            <option value="SMS">SMS</option>
+                         </select>
+                         {formik.touched.confirmationType && formik.errors.confirmationType ? (
+                           <div className ='input-error mt-1 pl-3' >{formik.errors.confirmationType}</div>
+                         ): null}
+                         {/* <label htmlFor="confirmationType">Confirmation Type</label> */}
+                        </div>
+                      </div> 
+                    </div>
                      <div className= 'row justify-content-center '> 
                       <div className ="col-lg-8">
                       <button 
-                        className="btn btn-lg  btn-success btn-block text-uppercase" type="submit"
-                        onClick = {() => resetForm(formik.initialValues)}>
+                        className="btn btn-lg  btn-success btn-block text-uppercase" type="submit" >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                         Create your account
                       </button>
                       </div>
