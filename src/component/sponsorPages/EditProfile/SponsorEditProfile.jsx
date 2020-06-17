@@ -11,7 +11,7 @@ const EditProfilePage = () => {
                         <h4>
                             Personal details:
                         </h4>
-                        <div className="container">
+                        <div className="grid-container">
                             <div>
                                 <label>First Name</label>
                                 <input type="text" name="firstName"/>
