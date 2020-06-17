@@ -1,9 +1,9 @@
 import React from 'react';
+import './sponsorHomePage.css';
 import {useHistory} from 'react-router-dom';
 import NavbarSponsor from './Navbar/navbar'
 import SideBarSponsor  from './sideBarSponsor/sideBarSponsor';
 import Cards from './card/card';
-import './sponsorHomePage.css';
 
 const SponsorHomePage = () => {
     const history = useHistory();
