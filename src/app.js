@@ -1,8 +1,8 @@
-import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './component/Pages/HomePage';
 import About from './component/Pages/About';
-import SignIn from './component/SignIn/Login'
+import SignIn from './component/SignIn/Login';
 import SignUp from './component/SignUp/SignUp';
 import './style.css';
 import SponsorHomePage from './component/sponsorPages/SponsorHomePage';
@@ -10,22 +10,20 @@ import SponsorEditProfile from './component/sponsorPages/EditProfile/SponsorEdit
 import confirmationPage from './component/confirmationPage/confirmation';
 import VerifyStatus from './component/confirmationPage/VerifyStatus';
 
-const App = () => {
-    
-    return (
-       
+const App = () => (
+
         <Router>
             <Switch>
-                <Route 
-                    path = '/' 
+                <Route
+                    path = '/'
                     exact
                     component = {HomePage}
                 />
-                <Route 
+                <Route
                     path ='/about'
                     component = {About}
                 />
-                <Route 
+                <Route
                     path ='/login'
                     component = {SignIn}
                 />
@@ -52,7 +50,6 @@ const App = () => {
                 />
             </Switch>
        </Router>
-    )
-}
+);
 
 export default App;

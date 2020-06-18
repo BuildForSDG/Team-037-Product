@@ -5,30 +5,26 @@ import img2 from '../Images/About/about2.jpg';
 import img1 from '../Images/About/about_1.jpg';
 
 const teams = [
-    {
-        image: img3,
-        title: 'Our Team',
-    },
-    {
-        image: img2,
-        title: 'Our Process',
-    },
-    {
-        image: img1,
-        title: 'Our Farmer',
-    },
+  {
+    image: img3,
+    title: 'Our Team'
+  },
+  {
+    image: img2,
+    title: 'Our Process'
+  },
+  {
+    image: img1,
+    title: 'Our Farmer'
+  }
 ];
 
-const Team = () => {
-    return (
-        <div className ='container-fluid' style = {{backgroundColor: '#F2F2F2'}}>
+const Team = () => (
+        <div className ='container-fluid' style = {{ backgroundColor: '#F2F2F2' }}>
             <div className ='row py-5 justify-content-center text-center'>
-                    {teams.map((team, index) => {
-                        return  <TeamInfo {...team} key = {index} />
-                    })}
+                    {teams.map((team, index) => <TeamInfo {...team} key = {index} />)}
             </div>
         </div>
-    )
-}
+);
 
 export default Team;

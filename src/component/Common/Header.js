@@ -1,25 +1,23 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Header = (props) => {
-        return (
+const Header = (props) => (
             <div>
-                <header className="masthead" style = {{backgroundImage: `url(${props.image})`}}>
+                <header className="masthead" style = {{ backgroundImage: `url(${props.image})` }}>
                   <div className="container">
                      <div className = 'row'>
                         <div className ='col-md-12'>
                         <div className="masthead-subheading">{props.title}</div>
-                            {props.color ? <div className="masthead-heading text-uppercase">{props.subtitle}</div> :
-                            <div className="masthead-heading text-uppercase">{props.subtitle}</div>}
-                            {props.showButton ?
-                            <NavLink className="btn btn-success btn-xl text-uppercase" id ='btn-link' to = {props.link}> {props.buttonText}</NavLink> : null
+                            {props.color ? <div className="masthead-heading text-uppercase">{props.subtitle}</div>
+                              : <div className="masthead-heading text-uppercase">{props.subtitle}</div>}
+                            {props.showButton
+                              ? <NavLink className="btn btn-success btn-xl text-uppercase" id ='btn-link' to = {props.link}> {props.buttonText}</NavLink> : null
                             }
                         </div>
                      </div>
                  </div>
                </header>
-           </div> 
-        )
-   }
+           </div>
+);
 
 export default Header;

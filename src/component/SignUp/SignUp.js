@@ -1,73 +1,73 @@
 import React, { useState, useEffect } from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
-import  './Signup.css';
-import {useFormik} from 'formik';
+import { NavLink, useHistory } from 'react-router-dom';
+import './Signup.css';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import img1 from './signup.svg';
 import Navigation from '../Common/Navigation';
 import createUser from '../../api/auth';
 
 
-const SignUp = () =>{
+const SignUp = () => {
   const [error, setError] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
   const history = useHistory();
   const phoneRegex = RegExp(
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
-);
+  );
 
-        const formik = useFormik({
-            initialValues: {
-                firstName: '',
-                lastName: '',
-                email: '',
-                phone: '',
-                password: '', 
-                ConfirmPassword: '',
-                confirmationType: ''
-            },
+  const formik = useFormik({
+    initialValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      password: '',
+      ConfirmPassword: '',
+      confirmationType: ''
+    },
 
-            validationSchema: Yup.object({
-                firstName: Yup.string()
-                            .required('Required')
-                            .max(12, 'Must be 15 characters or less.'),
-                lastName: Yup.string()
-                             .required('Required')
-                             .max(12, 'Must be 12 Characters or less'),
-                email:    Yup.string()
-                             .email('Please provide a valid email address')
-                             .required('Email Required'),
-                phone: Yup.string()
-                                .required('phone number is required')
-                                .max(15, 'phone number is too long.')
-                                .matches(phoneRegex, "Invalid phone"),    
-                password: Yup.string()
-                             .required('password is required')
-                             .min(6, 'password must be minimum of 6 characters')
-                             .matches(/(?=.*[0-9])/, "Password must contain a number."),
+    validationSchema: Yup.object({
+      firstName: Yup.string()
+        .required('Required')
+        .max(12, 'Must be 15 characters or less.'),
+      lastName: Yup.string()
+        .required('Required')
+        .max(12, 'Must be 12 Characters or less'),
+      email: Yup.string()
+        .email('Please provide a valid email address')
+        .required('Email Required'),
+      phone: Yup.string()
+        .required('phone number is required')
+        .max(15, 'phone number is too long.')
+        .matches(phoneRegex, 'Invalid phone'),
+      password: Yup.string()
+        .required('password is required')
+        .min(6, 'password must be minimum of 6 characters')
+        .matches(/(?=.*[0-9])/, 'Password must contain a number.'),
 
-                ConfirmPassword: Yup.string()
-                                    .oneOf([Yup.ref('password'), null], 'Passwords must match')
-                                    .required('confirm the password'),
-                confirmationType: Yup.string()
-                                    .required('Kindly select a confirmation type'),                    
-            }),
-            onSubmit: async (values, {setSubmitting}) => {        
-                const newUser = await createUser(values);
-                const { status, message, user } = newUser;
-                if(status == 201){
-                  localStorage.setItem('EmpowerFarmerUser', JSON.stringify(user));
-                  return history.push('/confirmationPage');
-                }
-                await setTimeout(() => {
-                    setError(true);
-                    setAlertMessage(message);
-                    setSubmitting(false);
-                }, 500);
-            }
-        });
+      ConfirmPassword: Yup.string()
+        .oneOf([Yup.ref('password'), null], 'Passwords must match')
+        .required('confirm the password'),
+      confirmationType: Yup.string()
+        .required('Kindly select a confirmation type')
+    }),
+    onSubmit: async (values, { setSubmitting }) => {
+      const newUser = await createUser(values);
+      const { status, message, user } = newUser;
+      if (status == 201) {
+        localStorage.setItem('EmpowerFarmerUser', JSON.stringify(user));
+        return history.push('/confirmationPage');
+      }
+      await setTimeout(() => {
+        setError(true);
+        setAlertMessage(message);
+        setSubmitting(false);
+      }, 500);
+    }
+  });
 
-        return (
+  return (
           <div>
             <Navigation />
             <div className="container wrapper">
@@ -86,15 +86,15 @@ const SignUp = () =>{
                         <div className = 'col-md-6'>
                             <div className="form-label-group">
                             <input
-                                type="text" 
-                                id="firstName" 
-                                name="firstName" 
-                                className="form-control" 
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                className="form-control"
                                 placeholder="First Name"
                                 {...formik.getFieldProps('firstName')}
                             />
-                            {formik.touched.firstName && formik.errors.firstName ? 
-                                (<div className ='input-error mt-1 pl-3'>{formik.errors.firstName}</div>) : null
+                            {formik.touched.firstName && formik.errors.firstName
+                              ? (<div className ='input-error mt-1 pl-3'>{formik.errors.firstName}</div>) : null
                               }
                             <label htmlFor="firstName">First Name</label>
                          </div>
@@ -102,81 +102,81 @@ const SignUp = () =>{
                         <div className = 'col-md-6'>
                             <div className="form-label-group">
                             <input
-                                type="text" 
-                                id="lastName" 
-                                className="form-control" 
-                                placeholder="LastName" 
+                                type="text"
+                                id="lastName"
+                                className="form-control"
+                                placeholder="LastName"
                                 {...formik.getFieldProps('lastName')}
                             />
-                            {formik.touched.lastName && formik.errors.lastName ? 
-                                (<div className ='input-error mt-1 pl-3'>{formik.errors.lastName}</div>) : null
+                            {formik.touched.lastName && formik.errors.lastName
+                              ? (<div className ='input-error mt-1 pl-3'>{formik.errors.lastName}</div>) : null
                               }
                             <label htmlFor="lastName">Last Name</label>
                          </div>
                       </div>
                     </div>
-    
+
                   <div className="form-label-group">
-                    <input 
-                        type="email" 
-                        id="inputEmail" 
-                        className="form-control" 
+                    <input
+                        type="email"
+                        id="inputEmail"
+                        className="form-control"
                         placeholder="Email address"
                         {...formik.getFieldProps('email')}
                     />
-                    {formik.touched.email && formik.errors.email ? 
-                        (<div className ='input-error mt-1 pl-3'>{formik.errors.email}</div>) : null
+                    {formik.touched.email && formik.errors.email
+                      ? (<div className ='input-error mt-1 pl-3'>{formik.errors.email}</div>) : null
                       }
                     <label htmlFor="inputEmail">Email address</label>
                   </div>
                   <div className="form-label-group">
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        className="form-control" 
+                    <input
+                        type="tel"
+                        id="phone"
+                        className="form-control"
                         placeholder="Phone Number"
                         {...formik.getFieldProps('phone')}
                     />
-                    {formik.touched.phone && formik.errors.phone ? 
-                        (<div className ='input-error mt-1 pl-3'>{formik.errors.phone}</div>) : null
+                    {formik.touched.phone && formik.errors.phone
+                      ? (<div className ='input-error mt-1 pl-3'>{formik.errors.phone}</div>) : null
                       }
                     <label htmlFor="phone">Phone Number</label>
                   </div>
-                  
+
                   <div className ="form-row">
-                    <div  className ="col-md-6">
+                    <div className ="col-md-6">
                        <div className="form-label-group">
-                         <input 
-                            type="password" 
-                            id="password" 
-                            className="form-control" 
+                         <input
+                            type="password"
+                            id="password"
+                            className="form-control"
                             placeholder="Password"
                             {...formik.getFieldProps('password')}
                          />
                          {formik.touched.password && formik.errors.password ? (
                            <div className ='input-error mt-1 pl-3' >{formik.errors.password}</div>
-                         ): null}
+                         ) : null}
                          <label htmlFor="password">Password</label>
                         </div>
                       </div>
-                    <div  className ="col-md-6">
+                    <div className ="col-md-6">
                       <div className="form-label-group">
-                         <input 
-                            type="password" 
-                            id="ConfirmPassword" 
-                            className="form-control" 
+                         <input
+                            type="password"
+                            id="ConfirmPassword"
+                            className="form-control"
                             placeholder="Password"
                             {...formik.getFieldProps('ConfirmPassword')}
                          />
                          {formik.touched.ConfirmPassword && formik.errors.ConfirmPassword ? (
                           <div className ='input-error mt-1 pl-3' >{formik.errors.ConfirmPassword}</div>
-                        ): null}
+                         ) : null}
                          <label htmlFor="ConfirmPassword">Confirm password</label>
                      </div>
                    </div>
                   </div>
                     <div className="form-row">
-                    <div  className ="col-md-12">
+                    <div className ="col-md-12">
                        <div className="form-label-group">
                          <select
                           id="confirmationType"
@@ -189,15 +189,15 @@ const SignUp = () =>{
                          </select>
                          {formik.touched.confirmationType && formik.errors.confirmationType ? (
                            <div className ='input-error mt-1 pl-3' >{formik.errors.confirmationType}</div>
-                         ): null}
+                         ) : null}
                          {/* <label htmlFor="confirmationType">Confirmation Type</label> */}
                         </div>
-                      </div> 
+                      </div>
                     </div>
-                     <div className= 'row justify-content-center '> 
+                     <div className= 'row justify-content-center '>
                       <div className ="col-lg-8">
-                      <button 
-                        className="btn btn-lg  btn-success btn-block text-uppercase" type="submit" >                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                      <button
+                        className="btn btn-lg  btn-success btn-block text-uppercase" type="submit" >
                         Create your account
                       </button>
                       </div>
@@ -212,7 +212,7 @@ const SignUp = () =>{
                             <button className="btn btn-google btn-block text-uppercase mb-3" type="submit"><i className="fab fa-google mr-2"></i> Sign up with Google</button>
                         </div>
                     </div>
-                    <div className="text-center w-100"> 
+                    <div className="text-center w-100">
                       <p className="text-muted font-weight-bold">Already Registered? <NavLink to ='/login' className="text-primary ml-2">Login</NavLink>
                       </p>
                   </div>
@@ -222,7 +222,7 @@ const SignUp = () =>{
              </div>
           </div>
           </div>
-     )
-}
+  );
+};
 
 export default SignUp;

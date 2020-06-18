@@ -7,12 +7,12 @@ import Team from '../About/Team';
 import Footer from '../Common/Footer';
 
 export class About extends Component {
-    render() {
-        return (
+  render() {
+    return (
             <div>
                 <Navigation />
-                <Header 
-                   image = {img} 
+                <Header
+                   image = {img}
                    showButton = {false}
                    subtitle = {
                        <div>
@@ -26,8 +26,8 @@ export class About extends Component {
                 <Team />
                 <Footer />
             </div>
-        )
-    }
+    );
+  }
 }
 
 export default About;
