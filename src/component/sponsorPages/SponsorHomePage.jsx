@@ -1,5 +1,5 @@
 import React from 'react';
-import './sponsorHomePage.css';
+import './homePageSponsor.css';
 import {useHistory} from 'react-router-dom';
 import NavbarSponsor from './Navbar/navbar'
 import SideBarSponsor  from './sideBarSponsor/sideBarSponsor';
