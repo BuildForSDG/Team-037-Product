@@ -24,11 +24,11 @@ Application was deployed to Heroku. Use public URL [https://sdg-empower-farmer-f
 
 ### Clone
 
-* Clone this project to your local machine `https://github.com/allebd/swapi.git`
+* Clone this project to your local machine `https://github.com/BuildForSDG/Team-037-Product.git`
   > Run the command below
 
 ```shell
-   git clone https://github.com/allebd/swapi.git
+   git clone https://github.com/BuildForSDG/Team-037-Product.git
 ```
 
 ### Setup
@@ -40,40 +40,15 @@ Application was deployed to Heroku. Use public URL [https://sdg-empower-farmer-f
    npm install
 ```
 
-* Create a .env file similar to the .env.sample file
-
-* Create your database
+* Start your react server
   > Run the command below
 
 ```shell
-  npx sequelize db:migrate
+  npm start
 ```
 
-* Add tables to database
-  > Run the command below
+* Use `http://localhost:1234` as base url
 
-```shell
-  npm run db:reset
-```
-
-* Start your node server
-  > Run the command below
-
-```shell
-  npm start or npm run dev
-```
-
-* Use `http://localhost:8000` as base url for endpoints
-
-
-### Running Unit Test
-
-* Run test for all endpoints
-  > run the command below
-  
-```shell
-  npm test
-```
 ## Authors
 
 [Joshua Lugada - Mentor]
