@@ -9,7 +9,7 @@ const NavbarSponsor = () => {
                 <div className="left_area">
                  <h2>Empower <span>Farmer</span></h2>
                 </div>
-                <div class="right_area">
+                <div className="right_area">
                     <a href="#" className="donate_btn">Donates</a>
                 </div>
             </header>

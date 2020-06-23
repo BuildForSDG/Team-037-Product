@@ -39,7 +39,7 @@ const EditProfilePage = () => {
                         </div>
 
                         <h4>Bank details:</h4>
-                        <div className="container">
+                        <div className="grid-container">
                             <div>
                                 <label>Account Name</label>
                                 <input type="text" name="accountName"/>

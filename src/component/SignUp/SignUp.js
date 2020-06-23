@@ -1,17 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import './Signup.css';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import img1 from './signup.svg';
 import Navigation from '../Common/Navigation';
-import createUser from '../../api/auth';
+import { createUser } from '../../api/auth';
+import appConfig from '../../config/appConfig';
+
+const { BACKEND_PATH } = appConfig;
+
 
 
 const SignUp = () => {
+  const history = useHistory();
+  const user = JSON.parse(localStorage.getItem('EmpowerFarmerUser'));
+  if (user) {
+    history.push('/sponsorDashboard');
+  }
   const [error, setError] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
-  const history = useHistory();
   const phoneRegex = RegExp(
     /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   );
@@ -209,7 +217,7 @@ const SignUp = () => {
                     </div>
                     <div className ="row justify-content-center">
                         <div className ='col-lg-8'>
-                            <button className="btn btn-google btn-block text-uppercase mb-3" type="submit"><i className="fab fa-google mr-2"></i> Sign up with Google</button>
+                        <a href={`${BACKEND_PATH}/auth/google`} className="btn btn-google btn-block text-uppercase mb-3"><i className="fab fa-google mr-2"></i> Sign Up with Google</a>
                         </div>
                     </div>
                     <div className="text-center w-100">
