@@ -24,7 +24,7 @@ import './sponsor.css';
                    <div className ="col-md-10 text-center">
                         <div className ="row reduced-width mb-4 mt-2" id ="reduced-width">
                             {ProductInfo.map((product, index) =>{
-                                return <SponsorItem  key = {index} {...product}/>
+                                return <SponsorItem key = {index} {...product}/>
                             })}
                         </div>     
                     </div>
@@ -33,5 +33,6 @@ import './sponsor.css';
         )
     }
 }
+
 
 export default SponsorDashboard;

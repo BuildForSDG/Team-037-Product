@@ -65,6 +65,6 @@ const Products = [
     price: '₦5,000',
     buttonText: 'Sponsor'
   }
-];
+]
 
 export default Products;
