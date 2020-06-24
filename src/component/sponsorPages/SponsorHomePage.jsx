@@ -15,7 +15,7 @@ const SponsorHomePage = () => {
         <div className="sponsor_dashboard">
             <NavbarSponsor />
             <div className="sponsor_body">
-                <SideBarSponsor />
+                <SideBarSponsor sponsorUser = { user } />
                 <Cards />
             </div>
         </div>

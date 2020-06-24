@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
 import Header from '../Common/Header';
 import img1 from '../Images/farmer.jpg';
 import SectionA from '../Common/SectionA';
@@ -9,6 +9,12 @@ import Footer from '../Common/Footer';
 import Navigation from '../Common/Navigation';
 
 
+if (location.search){
+  const tokenData = location.search.replace('?token=', '');
+  const token = jwtDecode(tokenData);
+  localStorage.setItem('EmpowerFarmerUser', JSON.stringify(token));
+  window.location.href = '/sponsorDashboard';
+}
 export class HomePage extends Component {
   render() {
     return (

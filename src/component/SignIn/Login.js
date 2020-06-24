@@ -1,12 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './login.css';
+import { useHistory, Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import login_img from './login_img.png';
 import Navigation from '../Common/Navigation';
+import { loginUser } from '../../api/auth';
+import appConfig from '../../config/appConfig';
+
+const { BACKEND_PATH } = appConfig;
 
 
 const Login = () => {
+  const history = useHistory();
+  const getUser = JSON.parse(localStorage.getItem('EmpowerFarmerUser'));
+  if (getUser) {
+    history.push('/sponsorDashboard');
+  }
+  const [error, setError] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -23,12 +35,18 @@ const Login = () => {
       customCheck1: Yup.boolean()
         .oneOf([true], '')
     }),
-    onSubmit: async (values, { resetForm, setSubmitting }) => {
+    onSubmit: async (values, { setSubmitting }) => {
+      const loginData = await loginUser(values);
+      const { status, message, user } = loginData;
+      if (status === 200) {
+        localStorage.setItem('EmpowerFarmerUser', JSON.stringify(user));
+        return history.push('/sponsorDashboard');
+      }
       await setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
+        setError(true);
+        setAlertMessage(message);
         setSubmitting(false);
-        resetForm();
-      }, 400);
+      }, 401);
     }
   });
 
@@ -38,7 +56,7 @@ const Login = () => {
           <div className="container wrapper">
             <div className="row no-gutter wrapper">
               <div className="d-none d-md-flex col-md-6 bg-image">
-                    <img src ={login_img} alt ='' className ='img-fluid'/>
+                <img src ={login_img} alt ='' className ='img-fluid'/>
               </div>
               <div className="col-md-6">
                 <div className="login d-flex align-items-center py-5">
@@ -46,6 +64,7 @@ const Login = () => {
                     <div className="row">
                        <div className="col-md-9 col-lg-8 mx-auto">
                          <h2 className="login-heading mb-4 text-center">Log in to your account</h2>
+                         { error ? <div className="error">{alertMessage} </div> : '' }
                            <form onSubmit = {formik.handleSubmit}>
                                 <div className="form-label-group">
                                 <input
@@ -84,14 +103,13 @@ const Login = () => {
                                     <label className="custom-control-label" htmlFor="customCheck1">Remember password</label>
                                 </div>
                                 <button className="btn btn-success btn-block btn-login mb-2" type="submit"
-                                onClick = {() => resetForm(formik.initialValues)}
                                 >Login</button>
                                 <div className="border-bottom w-100 ml-5">
                                   <span className="px-2 small text-muted font-weight-bold text-muted">OR</span>
                                 </div>
                                 <div className ="row justify-content-center">
                                   <div className ='col-lg-8'>
-                                    <button className="btn btn-google btn-block text-uppercase mb-3" type="submit"><i className="fab fa-google mr-2"></i> Login up with Google</button>
+                                    <a href={`${BACKEND_PATH}/auth/google`} className="btn btn-google btn-block text-uppercase mb-3"><i className="fab fa-google mr-2"></i> Login up with Google</a>
                                   </div>
                                 </div>
                                 <div className="text-center">

@@ -14,7 +14,7 @@ const SponsorEditProfileHome = () => {
     return(
         <div className="sponsorHome">
             <NavbarSponsor />
-            <SideBarSponsor />
+            <SideBarSponsor sponsorUser = { user } />
             <SponsorEditProfile />
         </div>
     )
