@@ -17,7 +17,8 @@
     "test:watch": "jest --watch",
     "test:cover": "jest --coverage",
     "lint": "eslint \"src/**/*.js\"",
-    "start": "parcel ./src/index.html"
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
   "author": {
     "name": "Build For SDG",
@@ -33,8 +34,10 @@
   },
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.5.0",
+    "axios": "^0.19.2",
     "formik": "^2.1.4",
+    "jwt-decode": "^2.2.0",
+    "parcel-bundler": "^1.12.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -47,8 +50,8 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
-    "jest": "^25.4.0",
-    "parcel-bundler": "^1.12.4"
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^25.4.0"
   },
   "browserslist": [
     "last 1 Chrome versions"

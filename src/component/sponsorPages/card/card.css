@@ -1,0 +1,54 @@
+.cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 80px;
+    grid-area: card;
+}
+.card {
+    display: grid;
+    background:#F2F2F2;
+    padding: 10px;
+    min-height: 60vh;
+}
+.card img{
+    width: 280px;
+    min-height: 35vh;
+}
+.card h5 {
+    color: #6FCF97;
+    font-size: 20px;
+}
+.sponsor_btn {
+    background: #6FCF97;
+    border-radius: 20px;
+    width: 150px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    height: 40px;
+}
+.sponsor_btn a{
+    color: #FFFBFB;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 5px;
+}
+.sponsor_btn :hover {
+    background: #1f7e48;
+    border-radius: 15px;
+    width: 150px;
+    text-align: center;
+}
+.card_feature{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 10px;
+}
+.farm{
+    text-align: left;
+}
+.price{
+    text-align: right;
+}

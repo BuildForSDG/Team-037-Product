@@ -69,6 +69,7 @@ header.masthead{
     background-attachment: scroll;
     background-repeat: no-repeat;
     height: 100vh;
+    position: relative;
 }
 
 @media (min-width: 768px) {

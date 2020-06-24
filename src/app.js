@@ -1,48 +1,57 @@
-import React, {useState} from "react";
-import 'bootstrap/dist/css/bootstrap.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-import PageWrapper from './component/PageWrapper';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HomePage from './component/Pages/HomePage';
 import About from './component/Pages/About';
-import SignIn from './component/SignIn/Login'
+import SignIn from './component/SignIn/Login';
 import SignUp from './component/SignUp/SignUp';
 import SponsorDashboard from './component/Sponsor/SponsorDashboard';
 import './style.css';
+import SponsorHomePage from './component/sponsorPages/SponsorHomePage';
+import SponsorEditProfile from './component/sponsorPages/EditProfile/SponsorEditProfileHome';
+import confirmationPage from './component/confirmationPage/confirmation';
+import VerifyStatus from './component/confirmationPage/VerifyStatus';
 
 
-const App = () => {
+const App = () => (
 
-    const [color, setColor] = useState('');
-    return (
-    <div style = {{backgroundColor: color}}>
         <Router>
-          <PageWrapper >
-              <Route 
-                path = '/' 
-                exact
-                component = {HomePage}
-             />
-
-            <Route 
-                path ='/about'
-                component = {About}
-            />
-            <Route 
-                path ='/login'
-                component = {SignIn}
-            />
-            <Route 
-                path ='/signup'
-                component = {SignUp}
-            />
-            <Route 
-                 path ='/dashboard'
-                 component = {SponsorDashboard}
-            />
-           </PageWrapper>
+            <Switch>
+                <Route
+                    path = '/'
+                    exact
+                    component = {HomePage}
+                />
+                <Route
+                    path ='/about'
+                    component = {About}
+                />
+                <Route
+                    path ='/login'
+                    component = {SignIn}
+                />
+                <Route
+                    path ='/signup'
+                    component = {SignUp}
+                />
+                <Route
+                    path ='/sponsorDashboard'
+                    component = {SponsorHomePage}
+                />
+                <Route
+                    path ='/sponsorEditProfile'
+                    component = {SponsorEditProfile}
+                />
+                <Route
+                    path ='/confirmationPage'
+                    exact
+                    component = { confirmationPage }
+                />
+                 <Route
+                    path ='/verifyStatus'
+                    component = { VerifyStatus }
+                />
+            </Switch>
        </Router>
-    </div>
-    )
-}
+);
 
 export default App;

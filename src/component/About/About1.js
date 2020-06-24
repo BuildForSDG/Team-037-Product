@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 export class About1 extends Component {
-    render() {
-        return (
+  render() {
+    return (
             <div className ='container mt-5  py-3'>
                <div className ='row text-center text-justify'>
                     <div className ='col-md-4 mb-3'>
@@ -17,10 +17,10 @@ export class About1 extends Component {
                         Our vision is feed the world and help to solve the problem of zero hunger in our community
                         </p>
                     </div>
-               </div> 
+               </div>
             </div>
-        )
-    }
+    );
+  }
 }
 
 export default About1;

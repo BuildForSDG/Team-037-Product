@@ -1,7 +1,6 @@
 import React from 'react';
 
-const ProductItem = (props) => {
-    return (
+const ProductItem = (props) => (
         <div className ='col-sm-6 col-lg-3 pt-3' >
          <div className="card" >
             <img src={props.image} className="card-img-top" alt="..." />
@@ -12,7 +11,6 @@ const ProductItem = (props) => {
             </div>
          </div>
        </div>
-    );
-};
+);
 
 export default ProductItem;
