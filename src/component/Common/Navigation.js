@@ -21,6 +21,7 @@ const Navigation = () => (
               <ul className ='nav navbar-nav navbar-right navpadding '>
                     <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-3' to="/signup">Sign Up</NavLink></li>
                     <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-3' to="/login">Login</NavLink></li>
+                    <li><NavLink className ='nav-link bg-success px-3 linkcol mr-md-3' to="/donate">Donate</NavLink></li>
                 </ul>
             </div>
         </nav>

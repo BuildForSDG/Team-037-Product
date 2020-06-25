@@ -212,7 +212,7 @@ const SignUp = () => {
                  </div>
                   <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                     <div className="border-bottom w-100 ml-5"></div>
-                        <span className="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                        <span className="px-2 small font-weight-bold text-muted">OR</span>
                         <div className="border-bottom w-100 mr-5"></div>
                     </div>
                     <div className ="row justify-content-center">

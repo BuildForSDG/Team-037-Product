@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Footer = () => (
         <div className ='container-fluid text-center padding' style = {{ backgroundColor: '#342F6A' }}>
@@ -22,7 +23,7 @@ const Footer = () => (
                 <h5>Join our community</h5>
                 <h5> to help empower</h5>
                 <h5 className ='mb-md-5 mb-3'> farmer</h5>
-                <a href ='#' className ='btn btn-success px-4' style = {{ borderRadius: '2.5em' }} >Get Started</a>
+                <Link to ='/SignUp' className ='btn btn-success px-4' style = {{ borderRadius: '2.5em' }} >Get Started</Link>
             </div>
             <div className ='col-lg-12'>
               <hr className="light-100" />
