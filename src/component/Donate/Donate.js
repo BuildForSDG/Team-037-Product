@@ -35,11 +35,23 @@ class Donate extends React.Component{
              }).catch((error) =>{
                  console.log(error);
              });
+
+            setTimeout(() => {
+                this.setState({
+                    firstname: '',
+                    lastname: '',
+                    email: '',
+                    amount: '',
+                    phone: '',
+                    description: ''
+                  });
+                
+            },1000);
             setTimeout(() => {
                 this.props.history.push('/sponsorDashboard');
                 
             },6000);
-                
+            
     }
 
     handleChange(e){
@@ -141,8 +153,14 @@ class Donate extends React.Component{
                                     onChange ={this.handleChange} 
                                 />
                             </div>
-                            <button onClick ={notify} className="btn btn-success btn-login mb-2" id ="btn-donate" type="submit"
-                            >Donate</button>
+                            <button 
+                                onClick ={notify} 
+                                className="btn btn-success btn-login mb-2" 
+                                id ="btn-donate" 
+                                type="submit"
+                                disabled = {!this.state.amount || !this.state.firstname || !this.state.lastname || !this.state.email || !this.state.phone || !this.state.description }
+                            >Donate
+                            </button>
                             <ToastContainer />
                             </form>
                         </div>
