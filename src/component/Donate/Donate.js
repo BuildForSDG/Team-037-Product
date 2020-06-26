@@ -2,7 +2,11 @@ import React from 'react';
 import img from './richard-bell.jpg';
 import './donate.css';
 import axios from 'axios';
+import apiUrl from '../../config/appConfig';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+const Base_Url = apiUrl;
 
 class Donate extends React.Component{
     constructor(props){
@@ -19,18 +23,23 @@ class Donate extends React.Component{
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
     handleSubmit (e){
         e.preventDefault();
         const user = {...this.state}
         console.log(user);
-        axios.post('https://localhost:4000/donation/donate', user)
+        axios.post(Base_Url + '/donation/donate', user)
              .then((res) => {
                  console.log(res.data);
+                 
              }).catch((error) =>{
                  console.log(error);
              });
-             
-                this.props.history.push('/')
+            setTimeout(() => {
+                this.props.history.push('/sponsorDashboard');
+                
+            },6000);
+                
     }
 
     handleChange(e){
@@ -43,7 +52,10 @@ class Donate extends React.Component{
        });
     }
 
+   
     render(){
+        const notify = () => toast.success('Thanks for sponsoring a farmer');
+
         return(
         <div className ="container" id = "center" >
             <div className ="row justify-content-center align-item-center item ">
@@ -57,7 +69,7 @@ class Donate extends React.Component{
                             <p className ="lead">Kindly donate now.</p>
                         </div>
                         <div className ="col-md-6 my-4 justify-content-center" id ="form">
-                          <form onSubmit = {this.handleSubmit}>
+                          <form onSubmit = {this.handleSubmit} >
                             <div className="form-group">
                                 <label htmlFor="amount">Amount</label>
                                 <input 
@@ -129,8 +141,9 @@ class Donate extends React.Component{
                                     onChange ={this.handleChange} 
                                 />
                             </div>
-                            <button className="btn btn-success btn-login mb-2" id ="btn-donate" type="submit"
+                            <button onClick ={notify} className="btn btn-success btn-login mb-2" id ="btn-donate" type="submit"
                             >Donate</button>
+                            <ToastContainer />
                             </form>
                         </div>
                    </div>
