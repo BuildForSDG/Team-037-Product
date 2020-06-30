@@ -38,3 +38,22 @@
 .sidebar span{
     padding: 5px;
 }
+.image-section{
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.image-profile{
+    position: absolute;
+}
+.editIcon{
+    position: absolute;
+    right: 30px;
+    bottom: 40px;
+}
+.editIcon img{
+    width: 20px;
+}
+.file-input{
+    display: none;
+}
