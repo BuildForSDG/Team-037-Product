@@ -52,7 +52,7 @@ Application was deployed to Heroku. Use public URL [https://sdg-empower-farmer-f
 ## Authors
 
 [Joshua Lugada - Mentor]
-[kolade ore - TTL](https://github.com/koladeore)
+[ore kolade - TTL](https://github.com/koladeore)
 [Uche - FRONTEND-DEVELOPER](https://github.com/teezyfortune)
 [Chinomso Onyeukwu - FRONTEND-DEVELOPER](https://github.com/2besweet)
 
