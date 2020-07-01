@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => (
             <div>
@@ -11,7 +11,7 @@ const Header = (props) => (
                             {props.color ? <div className="masthead-heading text-uppercase">{props.subtitle}</div>
                               : <div className="masthead-heading text-uppercase">{props.subtitle}</div>}
                             {props.showButton
-                              ? <NavLink className="btn btn-success btn-xl text-uppercase" id ='btn-link' to = {props.link}> {props.buttonText}</NavLink> : null
+                              ? <Link className="btn btn-success btn-xl text-uppercase" id ='btn-link' to = {props.link}> {props.buttonText}</Link> : null
                             }
                         </div>
                      </div>

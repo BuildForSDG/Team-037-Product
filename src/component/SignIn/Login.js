@@ -104,14 +104,12 @@ const Login = () => {
                                 </div>
                                 <button className="btn btn-success btn-block btn-login mb-2" type="submit"
                                 >Login</button>
-                                <div className="border-bottom w-100 ml-5">
-                                  <span className="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                                <div className="form-group col-lg-12 mx-auto d-flex align-items-center my-3">
+                                <div className="border-bottom w-100 ml-5"></div>
+                                    <span className="px-2 small font-weight-bold text-muted">OR</span>
+                                    <div className="border-bottom w-100 mr-5"></div>
                                 </div>
-                                <div className ="row justify-content-center">
-                                  <div className ='col-lg-8'>
-                                    <a href={`${BACKEND_PATH}/auth/google`} className="btn btn-google btn-block text-uppercase mb-3"><i className="fab fa-google mr-2"></i> Login up with Google</a>
-                                  </div>
-                                </div>
+                                    <a href={`${BACKEND_PATH}/auth/google`} className="btn btn-det btn-google btn-block text-uppercase mb-3"><i className="fab fa-google mr-2"></i> Login with Google</a>
                                 <div className="text-center">
                                   <a className="small" href="#">Forgot password?</a>
                                 </div>

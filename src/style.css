@@ -3,6 +3,7 @@ body{
     background-position: center center;
     background-attachment: scroll;
     background-repeat: no-repeat;
+    font-family: "Droid Serif","Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 } 
 
 .bg-light{
@@ -37,7 +38,7 @@ body{
 
 
 .card-img-top{
-    width:100%;
+    width:100% !important;
     height:40vh;
     object-fit: cover;
 }

@@ -9,6 +9,9 @@
     border-radius: 20px 0px;
     grid-area: sidebar;
 }
+.side-col{
+    color: #fff !important;
+}
 .sidebar .profile_image{
     width: 100px;
     height: 100px;

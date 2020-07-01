@@ -45,11 +45,11 @@ const SideBarSponsor = ({ sponsorUser: { imageUrl, firstName, lastName, token } 
                 </div>
                 <h4>{ firstName} { lastName }</h4>
             </center>
-            <Link to="/sponsorDashboard"><i className="fa fa-home" aria-hidden="true"></i><span>Dashboard</span></Link>
-            <Link to="/sponsorEditProfile"><i className="fa fa-user" aria-hidden="true"></i><span>Edit Profile</span></Link>
-            <Link to="/sponsorEditProfile"><i className="fa fa-id-card" aria-hidden="true"></i><span>Account Details</span></Link>
-            <a href="#"><i className="fa fa-book" aria-hidden="true"></i><span>Sponsor History</span></a>
-            <Link to="/login" onClick={ SignOut }><i className="fa fa-window-close" aria-hidden="true"></i><span>Log Out</span></Link>
+            <Link to="/sponsorDashboard"><i className="fa fa-home" aria-hidden="true"></i><span className ='side-col'>Dashboard</span></Link>
+            <Link to="/sponsorEditProfile"><i className="fa fa-user" aria-hidden="true"></i><span className ='side-col'>Edit Profile</span></Link>
+            <Link to="/sponsorEditProfile"><i className="fa fa-id-card" aria-hidden="true"></i><span className ='side-col'>Account Details</span></Link>
+            <a href="#"><i className="fa fa-book" aria-hidden="true"></i><span className ='side-col'>Sponsor History</span></a>
+            <Link to="/login" onClick={ SignOut }><i className="fa fa-window-close" aria-hidden="true"></i><span className ='side-col'>Log Out</span></Link>
         </div>
   );
 };
