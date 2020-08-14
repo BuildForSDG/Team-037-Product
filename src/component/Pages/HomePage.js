@@ -9,7 +9,7 @@ import Footer from '../Common/Footer';
 import Navigation from '../Common/Navigation';
 
 
-if (location.search){
+if (location.search) {
   const tokenData = location.search.replace('?token=', '');
   const token = jwtDecode(tokenData);
   localStorage.setItem('EmpowerFarmerUser', JSON.stringify(token));
@@ -18,25 +18,25 @@ if (location.search){
 export class HomePage extends Component {
   render() {
     return (
+      <div>
+        <Navigation />
+        <Header
+          title='Feed the World'
+          subtitle={
             <div>
-                <Navigation />
-                <Header
-                title = 'Feed the World'
-                subtitle = {
-                            <div>
-                              <p id ='subheading'>Join the platform and help achieve our<br />
-                               goal of Global farming practice</p>
-                            </div>}
-                image ={img1}
-                link = '/SignUp'
-                buttonText ='Fund a Farmer'
-                showButton = {true}
-                />
-                <SectionA />
-                <Products />
-                <Statistics />
-                <Footer />
-            </div>
+              <h2 id='subheading'>Join the platform and help achieve our<br />
+                               goal of Global farming practice</h2>
+            </div>}
+          image={img1}
+          link='/SignUp'
+          buttonText='Fund a Farmer'
+          showButton={true}
+        />
+        <SectionA />
+        <Products />
+        <Statistics />
+        <Footer />
+      </div>
     );
   }
 }
