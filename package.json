@@ -21,8 +21,8 @@
     "build": "parcel build ./src/index.html"
   },
   "author": {
-    "name": "Build For SDG",
-    "email": "buildforsdg@andela.com"
+    "name": "Uzor uchenna",
+    "email": "ucheuzor24@gmail.com"
   },
   "homepage": "https://github.com/BuildForSDG/js-starter#readme",
   "repository": {
